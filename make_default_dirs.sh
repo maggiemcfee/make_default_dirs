@@ -5,7 +5,7 @@
 if [ "$#" -ne 2 ]; then
     echo "Usage: $0 SHAREPATH LOGFILE"
     echo "SHAREPATH should be a full path. ex. - /n/Lab_storage/jharvard_lab"
-    echo "LOGFILE should be the full path to yoru log file. ex. - /temp/mylogfile.log"
+    echo "LOGFILE should be the full path to your log file. ex. - /temp/mylogfile.log"
     exit 1
 fi
 
@@ -27,7 +27,7 @@ lab_owner=$(stat -c "%U" "$file_path")
 permissions=$(stat -c "%a" "$file_path")
 echo -n "File path: $file_path - " >> "$log_file_path"
 echo -n "Owner: $lab_owner - Group: $lab_group - " >> "$log_file_path"
-echo "Permissions: $permissions" >> "$log_file_path" >> "$log_file_path"
+echo "Permissions: $permissions" >> "$log_file_path"
 
 ### Check for and create Lab directory if not found
 lab_dir="$file_path/Lab"
